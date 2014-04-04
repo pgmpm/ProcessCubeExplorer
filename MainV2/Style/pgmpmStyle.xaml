@@ -1,0 +1,160 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mui="http://firstfloorsoftware.com/ModernUI">
+    <!-- ************************************ Styles BOF************************************ -->
+    <VisualBrush x:Key="QuickSearchStyleBrush" TileMode="None" Opacity="0.4" Stretch="None" AlignmentX="Left">
+        <VisualBrush.Visual>
+            <TextBlock FontStyle="Italic" Text="Search for..."/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <Style x:Key="TextBoxQuickSearchStyle" TargetType="TextBox">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+
+        <Style.Triggers>
+            <Trigger Property="Text" Value="{x:Null}">
+                <Setter Property="Background" Value="{StaticResource QuickSearchStyleBrush}"/>
+            </Trigger>
+            <Trigger Property="Text" Value="">
+                <Setter Property="Background" Value="{StaticResource QuickSearchStyleBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+        
+    </Style>
+
+    <Style x:Key="ConsolidationQuicksearch" TargetType="TextBox">
+       
+
+        <Style.Triggers>
+            <Trigger Property="Text" Value="{x:Null}">
+                <Setter Property="Background" Value="{StaticResource QuickSearchStyleBrush}"/>
+            </Trigger>
+            <Trigger Property="Text" Value="">
+                <Setter Property="Background" Value="{StaticResource QuickSearchStyleBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="Padding" Value="3"/>
+    </Style>
+    <Style x:Key="ComboboxStyle" TargetType="ComboBox">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="ToolTip" Value="Choose an option"/>
+    </Style>
+    <Style x:Key="PlainTextButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Label Content="{TemplateBinding Content}" x:Name="label" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="label" Property="Foreground" Value="DodgerBlue" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="0,-5,0,0" />
+    </Style>
+    <Style x:Key="DataselectioncomboStyle" TargetType="StackPanel">
+        <Setter Property="Width" Value="300"/>
+    </Style>
+    <Style x:Key="RadiobuttonStyle" TargetType="RadioButton">
+        <Setter Property="Margin" Value="0 10 0 0"/>
+    </Style>
+    <Style x:Key="NavigationStyle" TargetType="ListBoxItem">
+        <Setter Property="Margin" Value="0 5 0 0"/>
+    </Style>
+    <Style x:Key="BoldLabelStyle" TargetType="Label">
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style x:Key="LabelCaptionStyle" TargetType="Label">
+        <Setter Property="Height" Value="37"/>
+    </Style>
+    <Style x:Key="SliderStyle" TargetType="Slider">
+        <Setter Property="IsSnapToTickEnabled" Value="True"/>
+        <Setter Property="Margin" Value="3 0 8 -8" />
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+    <Style x:Key="SliderLabelBeforeStyle" TargetType="Label">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="-6,13,0,0"/>
+    </Style>
+    <Style x:Key="SliderLabelAfterStyle" TargetType="Label">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Margin" Value="-6,13,0,0"/>
+    </Style>
+    <Style x:Key="CheckboxStyle" TargetType="CheckBox">
+        <Setter Property="Height" Value="30"/>
+    </Style>
+    <!-- <Style x:Key="ListBoxWithContextMenu" TargetType="ListBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBox">
+                        <ContextMenu>
+                            <MenuItem Header="Select All" />
+                            <MenuItem Header="Select Non" />
+                        </ContextMenu>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style> -->
+    <Style x:Key="ListBoxItemWithCheckbox" TargetType="ListBoxItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <CheckBox Style="{x:Null}" Margin="2,1,0,1" Content="{TemplateBinding Property=Content}" IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSelected, Mode=TwoWay}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ListBox" TargetType="ListBox">
+
+    </Style>
+    <Style x:Key="TexboxNumber" TargetType="TextBox">
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="ToolTip" Value="Insert a number"/>
+    </Style>
+    <Style x:Key="ProgressbarStyle" TargetType="ProgressBar">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="ToolTip" Value="Please wait, the framework is loading."/>
+    </Style>
+    <Style x:Key="DbConnectLabel" TargetType="Label">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Height" Value="27"/>
+        <Setter Property="Width" Value="120"/>
+    </Style>
+    <Style x:Key="DbConnectTextBox" TargetType="FrameworkElement">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Height" Value="23"/>
+        <Setter Property="Width" Value="133"/>
+    </Style>
+    <Style x:Key="MenuStyle" TargetType="Menu">
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="DockPanel.Dock" Value="Top"/>
+    </Style>
+    <Style x:Key="Paragraph" TargetType="Paragraph">
+        <Setter Property="FontFamily" Value="Arial"/>
+    </Style>
+    <!-- ************************************ Styles EOF************************************ -->
+</ResourceDictionary>

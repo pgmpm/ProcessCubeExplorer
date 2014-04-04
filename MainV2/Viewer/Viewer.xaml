@@ -1,0 +1,51 @@
+﻿<mui:ModernWindow x:Class="pgmpm.MainV2.Viewer.Viewer"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+  IsTitleVisible="True"
+  ShowCloseButton="True"
+  Title="Process Cube Explorer" 
+  Height="600"
+  Width="1000"
+  Language="en-US"
+  WindowStartupLocation="CenterScreen"
+  ContentSource="/Viewer/PMViewer.xaml" 
+  Icon="../Cube32.ico">
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="model">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Viewer/PMViewer.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="information">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Viewer/PMInfo.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="footprint">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="conformance" Source="/Viewer/PMConformance.xaml" />
+                <mui:Link DisplayName="footprints" Source="/Viewer/FootprintViewer.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="replay">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Viewer/PMReplay.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid Style="{StaticResource ContentRoot}"></Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <!-- <mui:ModernButton Grid.Column="1" Style="{StaticResource IconCancel}" x:Name="CloseButton" Content="Close" Click="CloseClick" /> -->
+        </Grid>
+    </Grid>
+</mui:ModernWindow>

@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Content.heuristicMinerConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="450">
+    <Grid>
+        <StackPanel Width="450" HorizontalAlignment="Left">
+            <TextBlock Text="Configure the parameters for the Heuristic Miner" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+
+            <TextBlock Text="Adjacency threshold" Style="{StaticResource Emphasis}" Margin="0,0,0,8" />
+            <mui:BBCodeBlock BBCode="The adjacency threshold decides, when two elements in the adjacency-matrix belong together. It should be between 51 and 100 Percent." Margin="0,0,0,8" />
+            <StackPanel Orientation="Horizontal">
+                <TextBox VerticalAlignment="Center" Margin="0,0,10,25" Name="LongDistanceThresholdTextBox" Style="{StaticResource TexboxNumber}" Text="{Binding Mode=TwoWay, ElementName=AdjacencyThresholdSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider VerticalAlignment="Center" x:Name="AdjacencyThresholdSlider" Value="51" Minimum="0" Maximum="100" IsEnabled="True" TickPlacement="Both" IsSnapToTickEnabled="True" Margin="0,0,0,16" TickFrequency="1" Width="300" />
+            </StackPanel>
+
+            <TextBlock Text="Maximum recursion depth" Style="{StaticResource Emphasis}" Margin="0,0,0,8" />
+            <mui:BBCodeBlock BBCode="The current implementation uses recursion, which at some point should not be continued, since a stackoverflow might occur. You can adjust the maximum recursion depth here." Margin="0,0,0,8" />
+            <StackPanel Orientation="Horizontal">
+                <TextBox VerticalAlignment="Center" Margin="0,0,10,25" Name="MaximumRecursionDepthTextBox" Style="{StaticResource TexboxNumber}" Text="{Binding Mode=TwoWay, ElementName=MaximumRecursionDepthSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider VerticalAlignment="Center" x:Name="MaximumRecursionDepthSlider" Value="10" Minimum="1" Maximum="100" IsEnabled="True" TickPlacement="Both" IsSnapToTickEnabled="True" Margin="0,0,0,16" TickFrequency="1" Width="300" />
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

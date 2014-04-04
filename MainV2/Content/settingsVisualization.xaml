@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Content.settingsVisualization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:p="clr-namespace:pgmpm.Visualization.Properties;assembly=Visualization"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="450">
+    <Grid>
+        <ScrollViewer Width="450" Height="400" HorizontalAlignment="Left">
+            <StackPanel Width="450" HorizontalAlignment="Left">
+                <TextBlock Text="Visualization" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+                <mui:BBCodeBlock BBCode="Change how the process models will look." Margin="0,0,0,20" />
+                <CheckBox IsChecked="{Binding Source={x:Static p:Settings.Default}, Path=AutomaticallyAlignNodes}" Margin="10,0,0,8" x:Name="AutomaticallyAlignNodesCheckBox" Content="Automatically align nodes in visualization" />
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=TransitionHeight}" Margin="0,0,5,0" VerticalAlignment="Center" Width="40" />
+                    <Label Content="Transition Height" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=TransitionWidth}" Margin="0,0,5,0" VerticalAlignment="Center" Width="40" />
+                    <Label Content="Transition Width" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=PlaceRadius}" Margin="0,0,5,0" VerticalAlignment="Center" Width="40" />
+                    <Label Content="Place Radius" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=PositionCorrection}" Margin="0,0,5,0" VerticalAlignment="Center" Width="40" />
+                    <Label Content="Position Correction" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=ColumnWidth}" Margin="0,0,5,0" VerticalAlignment="Center" Width="40" />
+                    <Label Content="Column Width" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=RowHeight}" Margin="0,0,5,0" VerticalAlignment="Center" Width="40" />
+                    <Label Content="Row Height" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=DefaultStrokeThickness}" Margin="0,0,5,0" VerticalAlignment="Center" Width="40" />
+                    <Label Content="Stroke Thickness" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=DefaultBackgroundColor}" Margin="0,0,5,0" VerticalAlignment="Center" Width="80" />
+                    <Label Content="Background Color" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=DefaultBorderColor}" Margin="0,0,5,0" VerticalAlignment="Center" Width="80" />
+                    <Label Content="Border Color" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=DefaultStrokeColor}" Margin="0,0,5,0" VerticalAlignment="Center" Width="80" />
+                    <Label Content="Stroke Color" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=DeletedNodeColor}" Margin="0,0,5,0" VerticalAlignment="Center" Width="80" />
+                    <Label Content="Deleted Node Color" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=AddedNodeColor}" Margin="0,0,5,0" VerticalAlignment="Center" Width="80" />
+                    <Label Content="Added Node Color" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                    <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=ChangedNodeColor}" Margin="0,0,5,0" VerticalAlignment="Center" Width="80" />
+                    <Label Content="Changed Node Color" VerticalAlignment="Center" />
+                </StackPanel>
+                <Button Content="Reset to Default" Width="200" HorizontalAlignment="Left" Click="ResetToDefaultClick"></Button>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

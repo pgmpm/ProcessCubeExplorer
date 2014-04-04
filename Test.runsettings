@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- File name extension must be .runsettings -->
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="Code Coverage" uri="datacollector://Microsoft/CodeCoverage/2.0" assemblyQualifiedName="Microsoft.VisualStudio.Coverage.DynamicCoverageDataCollector, Microsoft.VisualStudio.TraceCollector, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+        <Configuration>
+          <CodeCoverage>
+            <!--
+Additional paths to search for .pdb (symbol) files. Symbols must be found for modules to be instrumented.
+If .pdb files are in the same folder as the .dll or .exe files, they are automatically found. Otherwise, specify them here.
+Note that searching for symbols increases code coverage runtime. So keep this small and local.
+-->
+            <!--           
+            <SymbolSearchPaths>              
+                   <Path>C:\Users\User\Documents\Visual Studio 2012\Projects\ProjectX\bin\Debug</Path>
+                   <Path>\\mybuildshare\builds\ProjectX</Path>
+            </SymbolSearchPaths>
+-->
+
+            <!--
+About include/exclude lists:
+Empty "Include" clauses imply all; empty "Exclude" clauses imply none.
+Each element in the list is a regular expression (ECMAScript syntax). See http://msdn.microsoft.com/library/2k3te2cs.aspx.
+An item must first match at least one entry in the include list to be included.
+Included items must then not match any entries in the exclude list to remain included.
+-->
+
+            <!-- Match assembly file paths: -->
+            <ModulePaths>
+              <Exclude>
+                <ModulePath>.*tests.dll</ModulePath>
+                <ModulePath>.*Tests.dll</ModulePath>
+                <ModulePath>.*npgsql.dll</ModulePath>
+                <ModulePath>.*exampledata.dll</ModulePath>
+                <ModulePath>.*mainV2.exe</ModulePath>
+                <ModulePath>.*modernui.dll</ModulePath>
+              </Exclude>
+            </ModulePaths>
+
+
+            <!-- Match fully qualified names of functions: -->
+            <!-- (Use "\." to delimit namespaces in C# or Visual Basic, "::" in C++.)  -->
+            <Functions>
+              <Exclude>
+                <Function>^Fabrikam\.UnitTest\..*</Function>
+              </Exclude>
+            </Functions>
+
+          
+
+
+            <!-- We recommend you do not change the following values: -->
+            <UseVerifiableInstrumentation>True</UseVerifiableInstrumentation>
+            <AllowLowIntegrityProcesses>True</AllowLowIntegrityProcesses>
+            <CollectFromChildProcesses>True</CollectFromChildProcesses>
+            <CollectAspDotNet>False</CollectAspDotNet>
+
+          </CodeCoverage>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>

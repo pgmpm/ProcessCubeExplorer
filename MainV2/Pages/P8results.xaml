@@ -1,0 +1,189 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Pages.P8Results"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Click through the matrix to see your results. Doubleclick on a field to view the process model." Margin="-15, -30, 0, 0" Grid.Row="0" VerticalAlignment="Top" Style="{StaticResource Heading2}" />
+        <Image x:Name="image"></Image>
+
+
+        <Grid Style="{StaticResource ContentRoot}" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Margin="{StaticResource SplitLeft}">
+                <Grid Margin="10" MaxHeight="450">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <ItemsControl Name="MatrixVisualizationGrid">
+                            <ItemsControl.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Uncheck all" Click="UncheckAllContextClick"></MenuItem>
+                                </ContextMenu>
+                            </ItemsControl.ContextMenu>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate x:Name="VisualizationUniGrid">
+                                    <UniformGrid Loaded="AssignUniformGrid"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate x:Name="ButtonFieldDataTemplate">
+                                    <Button x:Name="ButtonField" Click="FieldClick" Tag="{Binding}" MouseDoubleClick="FieldDoubleClick">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Canvas Width="5" Height="5" Margin="0,0,5,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <Ellipse Width="5" Height="5" Canvas.Left="0" Canvas.Top="0" Fill="{Binding ProcessModelQualityColor}"></Ellipse>
+                                            </Canvas>
+                                            <TextBlock Text="{Binding Infotext}" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="Buttontext"></TextBlock>
+                                            <CheckBox HorizontalAlignment="Right" Tag="{Binding}"  VerticalAlignment="Center" x:Name="CompareCheckbox" IsEnabled="{Binding ProcessModelCompareCheckbox}" Checked="GetChoosenProcessModel" Unchecked="GetChoosenProcessModel"/>
+                                        </StackPanel>
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+            </ScrollViewer>
+            <GridSplitter Grid.Column="1" />
+
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+
+                <Expander x:Name="ConsolidationExpander" Grid.Row="0"   Header="Consolidation">
+                    <Border  BorderBrush="LightGray"   BorderThickness="0" Margin="5,5,0,0">
+                        <StackPanel Margin="10,5,10,10" >
+                            <TextBlock x:Name="OptionsLabel" Text="Show only process models with:"/>
+                            <ListView x:Name="ConsolidationListBox" Height="80"  SelectionChanged="OnConsolidationSelectionChanged" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Multiple" BorderThickness="1" />
+
+                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                <RadioButton Grid.Column="0" x:Name="OrRadioButton" Content="OR" IsChecked="True"  />
+                                <RadioButton Grid.Column="1" x:Name="AndRadioButton" Content="AND" Margin="15,0,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel    Visibility="Visible" x:Name="EventPanel" Margin="0,10,0,0">
+                                <TextBlock x:Name="AvailableEventsHeader" Text="Available events:" Visibility="Visible" />
+                                <ListView x:Name="EventListBox"  Height="100" Visibility="Visible" SelectionMode="Multiple" BorderThickness="1" />
+                                <TextBox x:Name="QuicksearchTextField" Style="{StaticResource ConsolidationQuicksearch}"   TextChanged="QuickSearchConsolidation" ></TextBox>
+                            </StackPanel>
+
+                            <StackPanel Visibility="Visible" x:Name="SliderPanel" Orientation="Vertical" Margin="0,10,0,0">
+                                <TextBlock x:Name="NumerOfEventsHeader" Text="Minimum number of events:" Visibility="Visible" />
+
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBox VerticalAlignment="Center"  x:Name="NumberOfEventsTextBox" Style="{StaticResource TexboxNumber}" Text="{Binding Value, ElementName=NumberOfEventsSlider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="25" RenderTransformOrigin="1.045,0.833"/>
+                                    <Slider  x:Name="NumberOfEventsSlider" Minimum="0" Maximum="100" IsEnabled="True" TickPlacement="Both" IsSnapToTickEnabled="True" TickFrequency="1" VerticalAlignment="Center" Margin="5,0,5,0" Width="225" />
+
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                <Button x:Name="StartConsolidationButton" Content="Consolidate"  Margin="0,5,5,0" Click="StartConsolidationClick" ></Button>
+                                <Button x:Name="ConsolidationResetButton" Content="Reset"  Margin="0,5,0,0" Click="ConsolidationResetClick"></Button>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Border>
+                </Expander>
+
+                <Expander x:Name="LegendExpander" Grid.Row="1" Header="Legend">
+                    <Border BorderBrush="LightGray" BorderThickness="0" Margin="5,5,0,0">
+                        <StackPanel Margin="10,5,10,10" >
+                            <StackPanel Orientation="Horizontal">
+                                <Canvas Width="5" Height="5" Margin="0,0,5,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <Ellipse Width="5" Height="5" Canvas.Left="0" Canvas.Top="0" Fill="Green"/>
+                                </Canvas>
+                                <TextBlock Text="Used events above threshold" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Canvas Width="5" Height="5" Margin="0,0,5,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <Ellipse Width="5" Height="5" Canvas.Left="0" Canvas.Top="0" Fill="Yellow"/>
+                                </Canvas>
+                                <TextBlock Text="Used events beyond threshold" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Canvas Width="5" Height="5" Margin="0,0,5,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <Ellipse Width="5" Height="5" Canvas.Left="0" Canvas.Top="0" Fill="Red"/>
+                                </Canvas>
+                                <TextBlock Text="No or damaged processmodel" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Expander>
+
+                <DockPanel  x:Name="DockpanelInformation" Grid.Row="2" Visibility="Visible">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+
+                        <Viewbox Grid.Row="0" x:Name="viewBoxPreview" Height="100" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                            <Canvas HorizontalAlignment="Left" Height="100" Margin="0,0,0,0" VerticalAlignment="Top" Width="300" x:Name="ProcessModelPreviewCanvas"/>
+                        </Viewbox>
+                        <ScrollViewer Grid.Row="1" Margin="0,15,0,0">
+                            <ListView  HorizontalAlignment="Left" x:Name="PMInformation" VerticalAlignment="Top" HorizontalContentAlignment="Stretch">
+                                <ListView.Resources>
+                                    <Style TargetType="GridViewColumnHeader">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </Style>
+                                </ListView.Resources>
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Key}" Width="150"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Value}" Width="150"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </ScrollViewer>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal">
+                            <mui:ModernButton x:Name="ExportButton" Content="Export" Style="{StaticResource IconExport}" Margin="0,0,10,0" Click="ExportClick" />
+                            <mui:ModernButton x:Name="PrintButton" Content="Print" Style="{StaticResource IconPrint}" Margin="0,0,10,0" Click="PrintClick" />
+                            <mui:ModernButton x:Name="MagnifyButton" Content="Magnify" Style="{StaticResource IconMagnify}" Margin="0,0,10,0" Click="MagnifyClick" />
+                        </StackPanel>
+                    </Grid>
+
+
+                </DockPanel>
+
+            </Grid>
+
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="135" />
+                <ColumnDefinition Width="125" />
+                <ColumnDefinition Width="125" />
+            </Grid.ColumnDefinitions>
+            <mui:ModernButton x:Name="PreviousButton" Grid.Column="0" Style="{StaticResource IconPrevious}" Click="PreviousClick" />
+            <mui:ModernButton x:Name="OpenSettingsButton" Grid.Column="1"  Style="{StaticResource IconSettings}" Click="OpenSettingsClick" />
+            <mui:ModernButton x:Name="OpenNoteButton" Grid.Column="2"  Style="{StaticResource IconNoteSmall}" Click="OpenNoteClick" />
+            <mui:ModernButton x:Name="DBInformationButton" Grid.Column="3" Style="{StaticResource IconDBConnect}"  Content="db information" Click="DBInformationClick" />
+            <mui:ModernButton x:Name="CompareButton" Grid.Column="4" Style="{StaticResource IconCompare}" Click="CompareClick" />
+            <mui:ModernButton x:Name="SaveButton" Grid.Column="5" Style="{StaticResource IconSave}" Click="SaveClick" />
+            <mui:ModernButton x:Name="RestartButton" Grid.Column="6" Style="{StaticResource IconRestart}" Click="RestartClick" />
+        </Grid>
+    </Grid>
+</UserControl>

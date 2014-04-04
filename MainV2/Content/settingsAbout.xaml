@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Content.settingsAbout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel Width="800" HorizontalAlignment="Left">
+                <TextBlock Text="About" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+                <!--<mui:BBCodeBlock BBCode="This programm uses other stuff like Oracle, MySQL, PostgreSQL, [url=http://mui.codeplex.com]ModernUI[/url] by First Floor Software, Icons by [url=http://www.modernuiicons.com]Modern UI Icons[/url]." Margin="0,0,0,20" />-->
+                <mui:BBCodeBlock BBCode="This product was created within the project 'Multidimensionales Process Mining' at the Carl von Ossietzky University Oldenburg from 2013-2014. The Process Cube Explorer allows you an explorative navigation of data with OLAP-operations and the compilation of process models according to the implementation of process mining." Margin="0,0,155,20" />
+                <mui:BBCodeBlock BBCode="This product includes:" Margin="0,0,0,0" />
+                <mui:BBCodeBlock BBCode="[url=http://mui.codeplex.com]ModernUI[/url] used from First Floor Software, Icons from [url=http://www.modernuiicons.com]Modern UI Icons[/url] and [url=http://www.axialis.com/free/icons]Axialis Team[/url]." Margin="0,0,0,10" />
+                <mui:BBCodeBlock BBCode="Version: 0.7" Margin="0,0,0,10" />
+                <mui:BBCodeBlock BBCode="Members of the project group are:" Margin="0,15,0,10" />
+                <mui:BBCodeBlock BBCode="Andrej Albrecht" Margin="0,0,0,5" />
+                <mui:BBCodeBlock BBCode="Jannik Arndt" Margin="0,0,0,5" />
+                <mui:BBCodeBlock BBCode="Roman Bauer" Margin="0,0,0,5" />
+                <mui:BBCodeBlock BBCode="Bernhard Bruns" Margin="0,0,0,5" />
+                <mui:BBCodeBlock BBCode="Moritz Eversmann" Margin="0,0,0,5" />
+                <mui:BBCodeBlock BBCode="Markus Holznagel" Margin="0,0,0,5" />
+                <mui:BBCodeBlock BBCode="Christopher Licht" Margin="0,0,0,5" />
+                <mui:BBCodeBlock BBCode="Thomas Meents" Margin="0,0,0,5" />
+                <mui:BBCodeBlock BBCode="Bernd Nottbeck" Margin="0,0,0,5" />
+                <mui:BBCodeBlock BBCode="Naby Moussa Sow" Margin="0,0,0,5" />
+                <mui:BBCodeBlock BBCode="Krystian Zielonka" Margin="0,0,0,5" />
+                <mui:BBCodeBlock BBCode="This program is licensed under the terms of GNU General Public Licence v3 (GPL-3)." Margin="0,20,0,5" />
+                <!--<TextBlock Text="Bild einfügen" Width="100" Height="50" Margin="630,-780,10,10" ></TextBlock>-->
+                <!--<Image Source="\MainV2\AboutCube32.png"  Margin="620,-770,10,10" Height="100" Width="100"/>-->
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

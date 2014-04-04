@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Content.InductiveMinerConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="550">
+    <Grid>
+        <StackPanel Width="550" HorizontalAlignment="Left">
+            <TextBlock Text="Configure the parameters for the Inductive Miner" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+
+            <RadioButton GroupName="InductiveMiner" IsEnabled="True" IsChecked="True" Content="InductiveMiner" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.674,9.118" x:Name="InductiveminerRadioButton" Height="25" Width="120" FontWeight="Bold" Click="InductiveminerRadioButtonClick"/>
+            <mui:BBCodeBlock BBCode="The Inductive Miner (IM) is a new Process Discovery mining algorithm that applies the divide-and-conquer techniques in which the event log is split and a model is constructed recursively.   " Margin="0,0,0,8" />
+            <RadioButton GroupName="InductiveMiner" Content="InductiveMinerInfrequent" RenderTransformOrigin="1.674,9.118" x:Name="InductiveminerInfrequentRadioButton" Margin="0,0,371,0" Height="25" FontWeight="Bold" Click="InductiveminerInfrequentRadioButtonClick"  />
+            <mui:BBCodeBlock BBCode="The Inductive Miner - infrequent (IMi) is an extension of the IM with an addition of infrequent
+behaviour filters to all steps of IM.
+ " Margin="0,0,0,8" />
+            <StackPanel Visibility="Visible" x:Name="InductiveThresholdSliderPanel" Orientation="Horizontal" HorizontalAlignment="Left" Width="450">
+                <TextBox VerticalAlignment="Center" Margin="0,0,10,25" x:Name="InductiveThresholdTextBox" Style="{StaticResource TexboxNumber}" Text="{Binding Value, ElementName=InductiveThresholdSlider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider VerticalAlignment="Center" x:Name="InductiveThresholdSlider" Minimum="0" Maximum="1" IsEnabled="True" TickPlacement="Both" IsSnapToTickEnabled="True" Margin="0,0,0,16" TickFrequency="0.01" Width="300" />
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

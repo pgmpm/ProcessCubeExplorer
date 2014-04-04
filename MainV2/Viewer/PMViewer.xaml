@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Viewer.PMViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI" 
+             xmlns:l="clr-namespace:UIControls;assembly=UIControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="1000">
+    <Grid Style="{StaticResource ContentRoot}">
+            <Grid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Export" Click="ExportClick"/>
+                    <MenuItem Header="Print" Click="PrintClick"/>
+                    <MenuItem Header="Redraw" Click="RedrawClick"/>
+                    <MenuItem Header="Zoom in" Click="ZoomInClick"/>
+                    <MenuItem Header="Zoom out" Click="ZoomOutClick"/>
+            </ContextMenu>
+            </Grid.ContextMenu>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" x:Name="HeadingText" VerticalAlignment="Top" Style="{StaticResource Heading2}" />
+        <Canvas Grid.Row="1" x:Name="Legend" />
+        <ScrollViewer Grid.Row="2" x:Name="ScrollViewer" CanContentScroll="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Canvas x:Name="ProcessModelCanvas" Width="0" Height="0" TextOptions.TextRenderingMode="ClearType">
+                <Canvas.LayoutTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                </Canvas.LayoutTransform>
+            </Canvas>
+        </ScrollViewer>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="74" />
+                <ColumnDefinition Width="66" />
+                <ColumnDefinition Width="76" />
+                <ColumnDefinition Width="176" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="110" />
+
+            </Grid.ColumnDefinitions>
+            <mui:ModernButton Grid.Column="0" Style="{StaticResource IconExport}" x:Name="ExportButton" Content="Export" Click="ExportClick" />
+            <mui:ModernButton Grid.Column="1" Style="{StaticResource IconPrint}" x:Name="PrintButton" Content="Print" Click="PrintClick" />
+            <mui:ModernButton Grid.Column="2" Style="{StaticResource IconReconnect}" x:Name="RedrawButton" Content="redraw" Click="RedrawClick" />
+            <l:SearchTextBox Grid.Column="3" Height="21" Width="150" VerticalAlignment="Bottom" SearchMode="Instant" Search="SearchEventTextBoxTextChanged"></l:SearchTextBox>
+            <!--<mui:ModernButton Grid.Column="7" Style="{StaticResource IconCancel}" x:Name="CloseButton1" Content="Close" Click="CloseClick1" Height="35" Width="110" />-->
+            <!-- <TextBox Grid.Column="3" Style="{StaticResource TextBoxQuickSearchStyle}" x:Name="SearchEventTextBox" TextChanged="SearchEventTextBoxTextChanged" Margin="0,10,0,-5" Width="160" Height="24"/> -->
+            <mui:ModernButton Grid.Column="4" Style="{StaticResource IconZoomIn}" x:Name="ZoomInButton" Click="ZoomInClick" />
+            <mui:ModernButton Grid.Column="5" Style="{StaticResource IconZoomOut}" x:Name="ZoomOutButton" Click="ZoomOutClick" />
+        </Grid>
+    </Grid>
+</UserControl>
