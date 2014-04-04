@@ -17,6 +17,7 @@ Authors are:
 - Naby Moussa Sow
 - Roman Bauer
 - Markus Holznagel
+
 (by percentage of authorship)
 
 Copyright 2014 Projektgruppe MPM. All Rights Reserved.
