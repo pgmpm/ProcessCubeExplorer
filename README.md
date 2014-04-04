@@ -17,10 +17,7 @@ Authors are:
 - Naby Moussa Sow
 - Roman Bauer
 - Markus Holznagel
-<<<<<<< HEAD
 
-=======
->>>>>>> dev
 (by percentage of authorship)
 
 Copyright 2014 Projektgruppe MPM. All Rights Reserved.
@@ -36,8 +33,4 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
 along with Process Cube Explorer. If not, see <http://www.gnu.org/licenses/>.
-=======
-along with Process Cube Explorer. If not, see <http://www.gnu.org/licenses/>.
->>>>>>> dev
