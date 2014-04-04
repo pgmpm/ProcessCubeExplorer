@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Author: Carsten Cordes-->
+<!-- Editor: Thomas Meents-->
+<mapping diagram="Petri-Net" namespace="Diff.Mappinginstructions.PetriNet">
+  <types>
+    <source representation="Source"/>
+    <sink representation="Place"/>
+    <node type="transition" representation="Transition" identifier="id"/>
+    <node type="place" representation="Place" identifier="id"/>
+    <edge type="arc" representation="Arc" identifier="id"/>
+  </types>
+
+  <patterns>
+    
+  </patterns>
+</mapping>

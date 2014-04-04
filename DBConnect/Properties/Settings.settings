@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="pgmpm.Database.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AESkey" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CaseColumnName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">case_id</Value>
+    </Setting>
+    <Setting Name="CaseTableName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CASE</Value>
+    </Setting>
+    <Setting Name="EventSortArgument" Type="System.String" Scope="User">
+      <Value Profile="(Default)">timestamp</Value>
+    </Setting>
+    <Setting Name="EventTableName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EVENT</Value>
+    </Setting>
+    <Setting Name="FactColumnName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">fact_id</Value>
+    </Setting>
+    <Setting Name="FactTableName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FACT</Value>
+    </Setting>
+    <Setting Name="JoinAllDimensions" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

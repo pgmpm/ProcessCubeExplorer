@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Content.settingsGeneral"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:MatrixSelectionProperties="clr-namespace:pgmpm.MatrixSelection.Properties;assembly=MatrixSelection"
+             xmlns:VisualizationProperties="clr-namespace:pgmpm.Visualization.Properties;assembly=Visualization"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="450">
+    <Grid>
+        <StackPanel Width="450" HorizontalAlignment="Left">
+            <TextBlock Text="General Settings" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+            <mui:BBCodeBlock BBCode="These settings affect the whole program." Margin="0,0,0,20" />
+
+            <CheckBox x:Name="closingProgramCheckBox" Content="Ask before closing program" Margin="10,0,0,8" Click="ClosingProgramClick" />
+            <CheckBox x:Name="openFolderAfterSaveCheckBox" Content="Open the folder after export" Margin="10,0,0,8" Click="OpenFolderAfterSaveClick"/>
+
+
+            <Label Content="Quality of Process Model" Style="{StaticResource LabelSettingsStyle}"/>
+            <Slider Value="{Binding Source={x:Static MatrixSelectionProperties:Settings.Default}, Path=ProcessModelPercentOfQuality, Mode=TwoWay}" HorizontalAlignment="Left" Margin="10,0,0,8" Height="30" Width="230" IsSnapToTickEnabled="True" LargeChange="1" TickFrequency="1" Maximum="100" Minimum="1" TickPlacement="BottomRight"/>
+
+            <Label Content="Default image-name for the processmodels" Style="{StaticResource LabelSettingsStyle}"/>
+            <TextBox x:Name="defaultimagenameTextBox" Style="{StaticResource TexboxSettingsStyle}" TextChanged="TextChanged" PreviewTextInput="DefaultImageName_PreviewTextInput"  />
+            <Popup x:Name="txtPasswordPopup" Placement="Top" PlacementTarget="{Binding ElementName=defaultimagename}" IsOpen="False">
+                <TextBlock x:Name="PopupTextBlock" Background="Wheat" Height="25"></TextBlock>
+            </Popup>
+
+            <Label Content="Default image-path for the processmodels" Style="{StaticResource LabelSettingsStyle}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="defaultImagePathTextBox" Style="{StaticResource TexboxSettingsStyle}" IsReadOnly="True"  TextChanged="TextChanged" Width="183"/>
+                <Button Click="DefaultImagePathClick" Content="..." Width="43
+                        " Height="25
+                        " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,0,0,0"/>
+
+
+            </StackPanel>
+            <Label  Content="Default image-filetype for the processmodels" Style="{StaticResource LabelSettingsStyle}"/>
+            <ComboBox SelectionChanged="SetDefaultImageTypeSelectionChanged" x:Name="setDefaultImageTypeComboBox" Style="{StaticResource ComboboxSettingsStyle}">
+                <ComboBoxItem Content="PNG"/>
+                <ComboBoxItem Content="JPEG"/>
+                <ComboBoxItem Content="BMP"/>
+                <ComboBoxItem Content="GIF"/>
+                <ComboBoxItem Content="TIFF"/>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

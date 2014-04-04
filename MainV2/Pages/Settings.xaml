@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Pages.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="SETTINGS" Margin="-15, -30, 0, 0" Grid.Row="0" VerticalAlignment="Top" Style="{StaticResource Heading2}" />
+
+        <Grid Style="{StaticResource ContentRoot}" Grid.Row="1">
+            <mui:ModernTab SelectedSource="/Content/settingsGeneral.xaml" Layout="List">
+                <mui:ModernTab.Links>
+                    <mui:Link DisplayName="General" Source="/Content/settingsGeneral.xaml" />
+                    <mui:Link DisplayName="Database Connections" Source="/Content/settingsDatabase.xaml" />
+                    <mui:Link DisplayName="Visualization" Source="/Content/settingsVisualization.xaml" />
+                    <mui:Link DisplayName="DWH Creation Helper" Source="/Content/toolsCreateDatabase.xaml" />
+                    <mui:Link DisplayName="About" Source="/Content/settingsAbout.xaml" />
+                    <mui:Link DisplayName="Shortcuts" Source="/Content/settingsShortcuts.xaml" />
+                </mui:ModernTab.Links>
+            </mui:ModernTab>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
+            </Grid.ColumnDefinitions>
+            <mui:ModernButton x:Name="CancelButton" Grid.Column="3" FontSize="20" EllipseDiameter="32" IconWidth="20" IconHeight="20" Content="cancel" HorizontalAlignment="Right" VerticalAlignment="Bottom" IconData="F1 M 38,19C 48.4934,19 57,27.5066 57,38C 57,48.4934 48.4934,57 38,57C 27.5066,57 19,48.4934 19,38C 19,27.5066 27.5066,19 38,19 Z M 38,23.75C 35.2116,23.75 32.6102,24.5509 30.4134,25.9352L 50.0648,45.5866C 51.4491,43.3898 52.25,40.7884 52.25,38C 52.25,30.13 45.87,23.75 38,23.75 Z M 23.75,38C 23.75,45.8701 30.1299,52.25 38,52.25C 40.7884,52.25 43.3897,51.4491 45.5865,50.0649L 25.9351,30.4136C 24.5509,32.6103 23.75,35.2117 23.75,38 Z" IsEnabled="True" Margin="0,0,10,0" Click="CancelClick" />
+            <mui:ModernButton x:Name="OkayButton"  Grid.Column="4" FontSize="20" EllipseDiameter="32" IconWidth="20" IconHeight="20" Content="okay" HorizontalAlignment="Right" VerticalAlignment="Bottom" IconData="F1 M 23.7501,33.25L 34.8334,44.3333L 52.2499,22.1668L 56.9999,26.9168L 34.8334,53.8333L 19.0001,38L 23.7501,33.25 Z" IsEnabled="True" Margin="0,0,10,0" Click="OkayClick" />
+        </Grid>
+    </Grid>
+</UserControl>

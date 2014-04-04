@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Pages.P1connection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="" Margin="-15, -30, 0, 0" Grid.Row="0" VerticalAlignment="Top" Style="{StaticResource Heading2}" />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="550"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Margin="{StaticResource SplitLeft}" Grid.Column="1">
+                <StackPanel >
+                    <TextBlock Text="MULTIDIMENSIONAL PROCESSMINING" Style="{StaticResource Heading1}" Margin="0,0,0,8"/>
+                    <TextBlock Text="Please connect to a database." Style="{StaticResource Heading2}" Margin="0,0,0,20" />
+                    <mui:ModernButton x:Name="RestoreSavedResultsButton" Content="Restore saved results" Style="{StaticResource IconRestore}" Margin="0,0,0,10" Click="RestoreSavedResultsClick" />
+                    <mui:ModernButton x:Name="ReconnectToLastUsedConnectionButton" Content="Reconnect to last used database" Style="{StaticResource IconReconnect}" Margin="0,0,0,10" Click="ReconnectToLastUsedConnectionClick" />
+                    <StackPanel Orientation="Horizontal">
+                        <mui:ModernButton x:Name="ConnectToFavouriteButton" Content="Choose from favourites" Style="{StaticResource IconFavourite}" Margin="0,0,10,10" Click="ConnectToFavouriteClick" />
+                        <ComboBox Margin="0,0,0,8" HorizontalAlignment="Left" MinWidth="100" Height="25" VerticalAlignment="Top" x:Name="FavouriteDBConnectionsComboBox"></ComboBox>
+                    </StackPanel>
+                    <mui:ModernButton x:Name="AddConnectionButton" Content="Add connection" Style="{StaticResource IconAdd}" Margin="0,0,0,10" Click="AddConnectionClick" />
+
+                    <Grid Visibility="Collapsed" x:Name="AddConnectionGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Connection Type:"       Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="0" />
+                        <Label Content="Connection Name:"       Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="1" />
+                        <Label x:Name="DBDatabaseLabel" Content="Database:"              Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="2" />
+                        <Label x:Name="DBUsernameLabel" Content="Username:"              Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="3" />
+                        <Label x:Name="DBPasswordLabel" Content="Password:"              Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="4" />
+                        <Label x:Name="DBHostnameLabel" Content="Server:"                Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="5" />
+                        <Label x:Name="DBPortLabel" Content="Port:"                  Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="6" />
+                        
+                        <ComboBox   x:Name="DBTypeComboBox"            Style="{StaticResource DbConnectTextBox}" SelectionChanged="DBTypeComboBoxChanged" Grid.Column="2"  Grid.Row="0" ItemsSource="{Binding}"/>
+                          
+                       
+                        <TextBox    x:Name="DBConnectionnameTextBox"  Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="1" />
+                        <TextBox    x:Name="DBDatabaseTextBox"        Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="2" MouseLeftButtonUp="DBDatabaseTextBoxMouseLeftButtonUp" />
+                        <TextBox    x:Name="DBUsernameTextBox"        Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="3" />
+                        <PasswordBox x:Name="DBPasswordTextBox"       Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="4" />
+                        <TextBox    x:Name="DBHostnameTextBox"        Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="5" />
+                        <TextBox    x:Name="DBPortTextBox"            Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="6" Text="3306" />
+                        
+                        <mui:ModernButton x:Name="SaveAndConnectButton" Content="Save and connect" Style="{StaticResource IconContinueSmall}" Grid.Column="3" Grid.Row="7" VerticalAlignment="Bottom" Click="SaveAndConnectClick" />
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="125" />
+            </Grid.ColumnDefinitions>
+            <mui:ModernButton x:Name="OpenSettingsButton" Grid.Column="1" Style="{StaticResource IconSettings}" Click="OpenSettingsClick" />
+            <mui:ModernButton x:Name="OpenNoteButton" Grid.Column="2" Style="{StaticResource IconNoteSmall}" Click="OpenNoteClick" />
+        </Grid>
+    </Grid>
+</UserControl>

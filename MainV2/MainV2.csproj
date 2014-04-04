@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E91AC72F-8D98-427F-BC83-8C68C9946711}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>pgmpm.MainV2</RootNamespace>
+    <AssemblyName>MainV2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <PublishUrl>veröffentlichen\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>pgmpm.MainV2.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Cube32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.x86.1.0.90.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\packages\System.Data.SQLite.x86.1.0.90.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIControls">
+      <HintPath>..\packages\UIControls\UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Content\configurationIntro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Content\alphaMinerConfig.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Content\InductiveMinerConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Content\settingsVisualization.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Content\toolsCreateDatabase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Content\heuristicMinerConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Content\settingsAbout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Content\settingsDatabase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Content\settingsShortcuts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Content\configurationIntro.xaml.cs">
+      <DependentUpon>configurationIntro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\alphaMinerConfig.xaml.cs">
+      <DependentUpon>alphaMinerConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\InductiveMinerConfig.xaml.cs">
+      <DependentUpon>InductiveMinerConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\settingsVisualization.xaml.cs">
+      <DependentUpon>settingsVisualization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\toolsCreateDatabase.xaml.cs">
+      <DependentUpon>toolsCreateDatabase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\heuristicMinerConfig.xaml.cs">
+      <DependentUpon>heuristicMinerConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\settingsAbout.xaml.cs">
+      <DependentUpon>settingsAbout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\settingsDatabase.xaml.cs">
+      <DependentUpon>settingsDatabase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\settingsShortcuts.xaml.cs">
+      <DependentUpon>settingsShortcuts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\ConsolidationHelper.cs" />
+    <Compile Include="Utilities\DBConnectionHelpers.cs" />
+    <Compile Include="Utilities\DotExporter.cs" />
+    <Compile Include="Utilities\ErrorHandling.cs" />
+    <Compile Include="Utilities\Exporter.cs" />
+    <Compile Include="Utilities\ExporterFactory.cs" />
+    <Compile Include="Utilities\IExporter.cs" />
+    <Compile Include="Utilities\ImageExporter.cs" />
+    <Compile Include="Utilities\InterfaceHelpers.cs" />
+    <Compile Include="Utilities\MXMLExporter.cs" />
+    <Compile Include="Utilities\PNMLExporter.cs" />
+    <Compile Include="Utilities\Point2D.cs" />
+    <Compile Include="Utilities\Printer.cs" />
+    <Compile Include="Utilities\Serializer.cs" />
+    <Compile Include="Utilities\VisualizationHelpers.cs" />
+    <Compile Include="Utilities\XMLHelper.cs" />
+    <Compile Include="GUI\EventDimensionSelector.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Viewer\FootprintViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\P1connection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\P2metadata.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\P3dimensionselection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\P5configuration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\P4eventselection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\P6mining.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\P7consolidation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\P8results.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Viewer\PMConformance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Viewer\PMReplay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viewer\PMInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Viewer\PMViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Content\settingsGeneral.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\notes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Viewer\Viewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Buttons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\pgmpmStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Viewer\FootprintViewer.xaml.cs">
+      <DependentUpon>FootprintViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\P1connection.xaml.cs">
+      <DependentUpon>P1connection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\P2metadata.xaml.cs">
+      <DependentUpon>P2metadata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\P3dimensionselection.xaml.cs">
+      <DependentUpon>P3dimensionselection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\P5configuration.xaml.cs">
+      <DependentUpon>P5configuration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\P4eventselection.xaml.cs">
+      <DependentUpon>P4eventselection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\P6mining.xaml.cs">
+      <DependentUpon>P6mining.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\P7consolidation.xaml.cs">
+      <DependentUpon>P7consolidation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\P8results.xaml.cs">
+      <DependentUpon>P8results.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viewer\PMConformance.xaml.cs">
+      <DependentUpon>PMConformance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viewer\PMReplay.xaml.cs">
+      <DependentUpon>PMReplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viewer\PMInfo.xaml.cs">
+      <DependentUpon>PMInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viewer\PMViewer.xaml.cs">
+      <DependentUpon>PMViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\settingsGeneral.xaml.cs">
+      <DependentUpon>settingsGeneral.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\notes.xaml.cs">
+      <DependentUpon>notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viewer\Viewer.xaml.cs">
+      <DependentUpon>Viewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConformanceChecking\ConformanceChecking.csproj">
+      <Project>{4553a16a-4fc2-4236-b1f6-61480af8a88b}</Project>
+      <Name>ConformanceChecking</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConsolidationAlgorithm\Consolidation.csproj">
+      <Project>{9a35d603-ed13-4112-982b-312b864b360c}</Project>
+      <Name>Consolidation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBConnect\Database.csproj">
+      <Project>{db247007-f33b-4fb4-85f4-4272622b6cc4}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diff\Diff.csproj">
+      <Project>{d90c2964-1fc2-4354-9051-c762d12d53e0}</Project>
+      <Name>Diff</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MatrixSelection\MatrixSelection.csproj">
+      <Project>{7fecfa3f-318e-4911-a51a-e57608756c55}</Project>
+      <Name>MatrixSelection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MiningAlgorithm\MiningAlgorithm.csproj">
+      <Project>{e9548389-be77-4fee-af1d-c7adcbb7726a}</Project>
+      <Name>MiningAlgorithm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModernUI\FirstFloor.ModernUI.csproj">
+      <Project>{9A653A28-FE46-40E8-A14F-48B0E325165D}</Project>
+      <Name>FirstFloor.ModernUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProcessModel\Model.csproj">
+      <Project>{53b741be-1f95-425c-b6db-bdd6fbad5906}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Visualization\Visualization.csproj">
+      <Project>{eae3a693-3da1-4c83-858b-a0cfe5c34a9d}</Project>
+      <Name>Visualization</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cube32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="README.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

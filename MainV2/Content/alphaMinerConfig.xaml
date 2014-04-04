@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Content.alphaMinerConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="450">
+    <Grid>
+        <StackPanel Width="450" HorizontalAlignment="Left">
+            <TextBlock Text="Configure the parameters for the Alpha Miner" Style="{StaticResource Heading2}" Margin="0,0,0,10" />
+            <RadioButton GroupName="AlphaMiner" IsEnabled="True" x:Name="AlphaMinerRadioButton" Content="AlphaMiner" IsChecked="True" Margin="0,4,0,4" FontWeight="Bold" />
+            <mui:BBCodeBlock BBCode="The alpha Miner algorithm is the standard process mining algorithm, the algorithm can show all activities, all connections and all loops that are larger than two. As a result it delivers a so-called Workflow Net a Petri net that depicts the control flow of a process.." Margin="0,0,0,8" />
+            <RadioButton GroupName="AlphaMiner" IsEnabled="True" x:Name="AlphaMinerPlusRadioButton" Content="AlphaMiner+" Margin="0,4,0,4" FontWeight="Bold" />
+            <mui:BBCodeBlock BBCode="In contrast to the standard Alpha Miner, the Alpha Miner+ algorithm is able to detect loops." Margin="0,0,0,8" />
+            <RadioButton GroupName="AlphaMiner" IsEnabled="True" x:Name="AlphaMinerPlusPlusRadioButton" Content="AlphaMiner++" Margin="0,4,0,4" FontWeight="Bold" />
+            <mui:BBCodeBlock BBCode="The Alpha Miner++ algorithm is able to identify loops of the size two and also loops of the size one.   " Margin="0,0,0,8" />
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Viewer.PMConformance"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Name="FitnessComparingFootprints" Content="Fitness Comparing Footprints: -" />
+        <ScrollViewer Grid.Row="1" x:Name="ScrollViewer" HorizontalScrollBarVisibility="Auto" CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+            <Canvas x:Name="CanvasConformanceChecking" Width="0" Height="0" TextOptions.TextRenderingMode="ClearType">
+                <Canvas.LayoutTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                </Canvas.LayoutTransform>
+            </Canvas>
+        </ScrollViewer>
+        <Border Grid.Row="1" BorderThickness="1" BorderBrush="Black" Background="AliceBlue" Width="150" Height="63" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="5" Margin="0,0,20,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="130" />
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Row="0" Grid.Column="0" Fill="Green" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <Rectangle Grid.Row="1" Grid.Column="0" Fill="Red" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" />
+               
+                <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Transition ok" />
+                <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Transition problem" />
+                
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

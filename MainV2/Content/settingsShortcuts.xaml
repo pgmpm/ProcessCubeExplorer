@@ -1,0 +1,146 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Content.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="600">
+    <!--Author: Thomas Meents-->
+    <Grid>
+        <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <StackPanel Width="600" HorizontalAlignment="Left">
+                <TextBlock Text="Shortcuts" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+                
+                <FlowDocumentReader Margin="-15,0,0,8">
+                    <FlowDocument>
+                        <Table CellSpacing="2">
+                    <Table.Columns>
+                        <TableColumn/>
+                        <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>                       
+                        <TableRow>
+                            <TableCell>
+                              <Paragraph FontWeight="Bold" Style="{StaticResource Paragraph}">Key</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph FontWeight="Bold" Style="{StaticResource Paragraph}">Function</Paragraph>
+                            </TableCell>                            
+                        </TableRow>                        
+                                <TableRow>
+                                    <TableCell ColumnSpan="2" >
+                                        <Paragraph FontWeight="ExtraBold" Style="{StaticResource Paragraph}">Mainwindow</Paragraph>
+                                    </TableCell>
+                                </TableRow>                        
+                                <TableRow>
+                            <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">F11</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">full-screen or windowed mode</Paragraph>
+                            </TableCell>                            
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">left Shift+ C</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">connect to the default Database</Paragraph>
+                            </TableCell>                            
+                        </TableRow>
+                                <TableRow>
+                                    <TableCell ColumnSpan="2" >
+                                        <Paragraph FontWeight="ExtraBold" Style="{StaticResource Paragraph}">Visualization</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">Ctrl+I</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">shows information on the process model</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">Ctrl+S</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">save the process model</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">Ctrl+P</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">print the process model</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">+</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">zoom in</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">-</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">zoom out</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">left</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">scroll left</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">right</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">scroll right</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">up</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">scroll up</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                        
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">down</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource Paragraph}">scroll down</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                        
+                            </TableRowGroup>
+                </Table>
+                </FlowDocument>
+                </FlowDocumentReader>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,55 @@
+﻿<mui:ModernWindow x:Class="pgmpm.MainV2.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+  IsTitleVisible="True"
+  Title="Process Cube Explorer" 
+  Height="720"
+  Width="1280"
+  Language="en-US"
+  WindowStartupLocation="CenterScreen"
+  ContentSource="/Pages/P1connection.xaml" 
+  Icon="Cube32.ico">    
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="connection">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Pages/P1connection.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="metadata">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Pages/P2metadata.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="cases">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Pages/P3dimensionselection.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="events">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Pages/P4eventselection.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="configuration">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Pages/P5configuration.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="mining">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Pages/P6mining.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+      <!--  <mui:LinkGroup DisplayName="consolidation">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Pages/P7consolidation.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>  -->
+        <mui:LinkGroup DisplayName="results">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Pages/P8results.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>

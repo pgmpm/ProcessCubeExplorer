@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="pgmpm.MainV2.Content.settingsDatabase"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:p="clr-namespace:pgmpm.Database.Properties;assembly=Database"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel  Grid.Column="0" Width="450" HorizontalAlignment="Left">
+            <TextBlock Text="Database Settings" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+            <mui:BBCodeBlock BBCode="Here you can edit and delete your favourite database connections." Margin="0,0,0,20" />
+
+
+            <Grid x:Name="AddConnectionGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Connection Type:"       Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="0" />
+                <Label Content="Connection Name:"       Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="1" />
+                <Label Content="Database:"             x:Name="DBDatabaseLabel" Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="2"  />
+                <Label Content="Username:"             x:Name="DBUsernameLabel" Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="3" />
+                <Label Content="Password:"             x:Name="DBPasswordLabel" Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="4" />
+                <Label Content="Server:"               x:Name="DBHostnameLabel" Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="5" />
+                <Label Content="Port:"                 x:Name="DBPortLabel" Style="{StaticResource DbConnectLabel}" Grid.Column="1" Grid.Row="6" />
+
+                <ComboBox   x:Name="DBTypeComboBox"            Style="{StaticResource DbConnectTextBox}"  Grid.Column="2"  Grid.Row="0" SelectionChanged="DBTypeComboBoxSelectionChanged" ItemsSource="{Binding}"/>
+
+                <TextBox    x:Name="DBConnectionnameTextBox"  Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="1"  TextChanged="EnabledTestButton" />
+                <TextBox    x:Name="DBDatabaseTextBox"        Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="2" TextChanged="EnabledTestButton" MouseLeftButtonUp="DBDatabaseTextBox_Textbox_MouseLeftButtonUp" />
+                <TextBox    x:Name="DBUsernameTextBox"        Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="3" TextChanged="EnabledTestButton" />
+                <PasswordBox x:Name="DBPasswordPasswordBox"       Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="4" />
+                <TextBox    x:Name="DBHostnameTextBox"        Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="5" TextChanged="EnabledTestButton" />
+                <TextBox    x:Name="DBPortTextBox"            Style="{StaticResource DbConnectTextBox}" Grid.Column="2" Grid.Row="6" Text="3306" TextChanged="EnabledTestButton" />
+                <ListBox x:Name="ConnectionsListBox"  Style="{StaticResource ListBox}" HorizontalAlignment="Left" Height="175" VerticalAlignment="Top" Width="160"  DisplayMemberPath="Name"
+                         Grid.Row="0" Grid.RowSpan="7" Grid.Column="3" SelectionChanged="ConnectionsSelectionChanged" />
+                <mui:ModernButton Content="clear" x:Name="ClearConnectionButton" Style="{StaticResource IconDatabaseCreationHelper}" Grid.Column="1" Grid.Row="7"   VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0,5,25,0" Click="ClearConnectionClick"  />
+                <mui:ModernButton Content="add" x:Name="AddConnectionButton" Style="{StaticResource IconAdd}" Grid.Column="2" Grid.Row="7"   VerticalAlignment="Top"  Margin="0,5,0,0" Click="AddConnectionClick"  />
+                <mui:ModernButton Content="test" x:Name="TestConnectionButton"  IsEnabled="False"  Style="{StaticResource IconTest}" Grid.Column="2" Grid.Row="7"   VerticalAlignment="Top" Margin="70,5,0,0" Click="TestConnectionClick" />
+                <mui:ModernButton Content="remove" x:Name="RemoveConnectionButton" Style="{StaticResource IconDelete}" Grid.Column="3" Grid.Row="7"   VerticalAlignment="Top" Margin="0,5,0,0" Click="RemoveConnectionClick"/>
+
+
+            </Grid>
+            <StackPanel Width="450" HorizontalAlignment="Left">
+                <TextBlock Text="Miscellaneous" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+                <CheckBox IsChecked="{Binding Source={x:Static p:Settings.Default}, Path=JoinAllDimensions}" Margin="10,0,0,8" x:Name="JoinAllDimensionsCheckBox" Content="Fetch all dimension data (requires more joins)" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Width="450" HorizontalAlignment="Left">
+            <TextBlock Text="Column Names" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+            <mui:BBCodeBlock BBCode="Change the names of your database columns (for ALL connections)." Margin="0,0,0,20" />
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                <Label Content="Fact Table Name" VerticalAlignment="Center" Margin="0,0,5,0" Width="140" />
+                <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=FactTableName}" Margin="0,0,5,0" VerticalAlignment="Center" Width="140" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                <Label Content="Case Table Name" VerticalAlignment="Center" Margin="0,0,5,0" Width="140" />
+                <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=CaseTableName}" Margin="0,0,5,0" VerticalAlignment="Center" Width="140" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                <Label Content="Event Table Name" VerticalAlignment="Center" Margin="0,0,5,0" Width="140" />
+                <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=EventTableName}" Margin="0,0,5,0" VerticalAlignment="Center" Width="140" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                <Label Content="Fact Column Name" VerticalAlignment="Center" Margin="0,0,5,0" Width="140" />
+                <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=FactColumnName}" Margin="0,0,5,0" VerticalAlignment="Center" Width="140" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                <Label Content="Case Column Name" VerticalAlignment="Center" Margin="0,0,5,0" Width="140" />
+                <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=CaseColumnName}" Margin="0,0,5,0" VerticalAlignment="Center" Width="140" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,8">
+                <Label Content="Event Sort Argument" VerticalAlignment="Center" Margin="0,0,5,0" Width="140" />
+                <TextBox Text="{Binding Source={x:Static p:Settings.Default}, Path=EventSortArgument}" Margin="0,0,5,0" VerticalAlignment="Center" Width="140" />
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
