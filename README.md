@@ -64,6 +64,7 @@ The software supports the following databases:
 - MS-SQL
 - PostgreSQL
 - SQLite
+
 Please note that you need to install the odac-drivers to use oracle-databases
 (http://www.oracle.com/technetwork/topics/dotnet/utilsoft-086879.html)
 
