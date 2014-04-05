@@ -74,5 +74,6 @@ dimension or filter) to one icd-10. Currently there are entries for T14.20 and T
 ## Mining
 You can choose one of the currently three mining-algorithms. These correspond (more or less)
 the the theoretical algorithms descriped in the documentation (in German) or here:
-- Alpha Miner ++ 
+- Alpha Miner ++  (http://wwwis.win.tue.nl/~wvdaalst/publications/p221.pdf)
 
+- Heuristic Miner (http://www.researchgate.net/profile/A_Weijters/publication/229124308_Process_Mining_with_the_Heuristics_Miner-algorithm/file/9fcfd510d615ef2b04.pdf)
