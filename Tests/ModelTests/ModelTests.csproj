@@ -89,7 +89,7 @@
       <Project>{7096af8f-51a8-45e3-afb5-8c81b844a19e}</Project>
       <Name>ExampleData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProcessModel\Model.csproj">
+    <ProjectReference Include="..\..\Model\Model.csproj">
       <Project>{53B741BE-1F95-425C-B6DB-BDD6FBAD5906}</Project>
       <Name>Model</Name>
     </ProjectReference>

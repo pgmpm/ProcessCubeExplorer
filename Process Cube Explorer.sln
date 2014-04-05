@@ -3,22 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "DBConnect\Database.csproj", "{DB247007-F33B-4FB4-85F4-4272622B6CC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{DB247007-F33B-4FB4-85F4-4272622B6CC4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiningAlgorithm", "MiningAlgorithm\MiningAlgorithm.csproj", "{E9548389-BE77-4FEE-AF1D-C7ADCBB7726A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consolidation", "ConsolidationAlgorithm\Consolidation.csproj", "{9A35D603-ED13-4112-982B-312B864B360C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consolidation", "Consolidation\Consolidation.csproj", "{9A35D603-ED13-4112-982B-312B864B360C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visualization", "Visualization\Visualization.csproj", "{EAE3A693-3DA1-4C83-858B-A0CFE5C34A9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBConnectTests", "DBConnectTests\DBConnectTests.csproj", "{5F130489-DB73-4692-897E-404708539EB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseTests", "Tests\DatabaseTests\DatabaseTests.csproj", "{5F130489-DB73-4692-897E-404708539EB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiningAlgorithmTests", "MiningAlgorithmTests\MiningAlgorithmTests.csproj", "{CE60535F-C538-4149-B54C-0F24A6B5BF61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiningAlgorithmTests", "Tests\MiningAlgorithmTests\MiningAlgorithmTests.csproj", "{CE60535F-C538-4149-B54C-0F24A6B5BF61}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E9548389-BE77-4FEE-AF1D-C7ADCBB7726A} = {E9548389-BE77-4FEE-AF1D-C7ADCBB7726A}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainV2", "MainV2\MainV2.csproj", "{E91AC72F-8D98-427F-BC83-8C68C9946711}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Process Cube Explorer", "Process Cube Explorer\Process Cube Explorer.csproj", "{E91AC72F-8D98-427F-BC83-8C68C9946711}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9A653A28-FE46-40E8-A14F-48B0E325165D} = {9A653A28-FE46-40E8-A14F-48B0E325165D}
 		{D90C2964-1FC2-4354-9051-C762D12D53E0} = {D90C2964-1FC2-4354-9051-C762D12D53E0}
@@ -26,13 +26,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainV2", "MainV2\MainV2.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConformanceChecking", "ConformanceChecking\ConformanceChecking.csproj", "{4553A16A-4FC2-4236-B1F6-61480AF8A88B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConformanceCheckingTests", "ConformanceCheckingTests\ConformanceCheckingTests.csproj", "{2A2B2BD5-4A63-4715-8CF2-6668A05216D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConformanceCheckingTests", "Tests\ConformanceCheckingTests\ConformanceCheckingTests.csproj", "{2A2B2BD5-4A63-4715-8CF2-6668A05216D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixSelection", "MatrixSelection\MatrixSelection.csproj", "{7FECFA3F-318E-4911-A51A-E57608756C55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "ProcessModel\Model.csproj", "{53B741BE-1F95-425C-B6DB-BDD6FBAD5906}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{53B741BE-1F95-425C-B6DB-BDD6FBAD5906}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixSelectionTests", "MatrixSelectionTests\MatrixSelectionTests.csproj", "{52AB39ED-1907-4679-BCED-DE39FBD3AE8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixSelectionTests", "Tests\MatrixSelectionTests\MatrixSelectionTests.csproj", "{52AB39ED-1907-4679-BCED-DE39FBD3AE8B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diff", "Diff\Diff.csproj", "{D90C2964-1FC2-4354-9051-C762D12D53E0}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -42,26 +42,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diff", "Diff\Diff.csproj", 
 		{53B741BE-1F95-425C-B6DB-BDD6FBAD5906} = {53B741BE-1F95-425C-B6DB-BDD6FBAD5906}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelTests", "ProcessModelTests\ModelTests.csproj", "{D5F81EBA-39F8-4D67-8EEB-DE6AFF30D18A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelTests", "Tests\ModelTests\ModelTests.csproj", "{D5F81EBA-39F8-4D67-8EEB-DE6AFF30D18A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainV2Tests", "MainV2Tests\MainV2Tests.csproj", "{13D45E21-458F-4CC9-93FE-C5D90CC1E3DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Process Cube Explorer Tests", "Tests\Process Cube Explorer Tests\Process Cube Explorer Tests.csproj", "{13D45E21-458F-4CC9-93FE-C5D90CC1E3DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiffTests", "DiffTests\DiffTests.csproj", "{F11CDC82-EB09-4A10-A521-16DF104CD708}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiffTests", "Tests\DiffTests\DiffTests.csproj", "{F11CDC82-EB09-4A10-A521-16DF104CD708}"
 	ProjectSection(ProjectDependencies) = postProject
 		{53B741BE-1F95-425C-B6DB-BDD6FBAD5906} = {53B741BE-1F95-425C-B6DB-BDD6FBAD5906}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleData", "ExampleData\ExampleData.csproj", "{7096AF8F-51A8-45E3-AFB5-8C81B844A19E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleData", "Tests\ExampleData\ExampleData.csproj", "{7096AF8F-51A8-45E3-AFB5-8C81B844A19E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstFloor.ModernUI", "ModernUI\FirstFloor.ModernUI.csproj", "{9A653A28-FE46-40E8-A14F-48B0E325165D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolidationTests", "ConsolidationTest\ConsolidationTests.csproj", "{47EA4668-64CB-4B2D-9BC2-D9EB415C9442}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolidationTests", "Tests\ConsolidationTest\ConsolidationTests.csproj", "{47EA4668-64CB-4B2D-9BC2-D9EB415C9442}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6DF421EC-70B2-4516-8BEF-B61B1070451C}"
 	ProjectSection(SolutionItems) = preProject
 		COPYING.txt = COPYING.txt
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5B9D41B0-F663-4B70-8DA1-73B71F5B439F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -367,6 +369,17 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CE60535F-C538-4149-B54C-0F24A6B5BF61} = {5B9D41B0-F663-4B70-8DA1-73B71F5B439F}
+		{2A2B2BD5-4A63-4715-8CF2-6668A05216D4} = {5B9D41B0-F663-4B70-8DA1-73B71F5B439F}
+		{52AB39ED-1907-4679-BCED-DE39FBD3AE8B} = {5B9D41B0-F663-4B70-8DA1-73B71F5B439F}
+		{D5F81EBA-39F8-4D67-8EEB-DE6AFF30D18A} = {5B9D41B0-F663-4B70-8DA1-73B71F5B439F}
+		{13D45E21-458F-4CC9-93FE-C5D90CC1E3DC} = {5B9D41B0-F663-4B70-8DA1-73B71F5B439F}
+		{F11CDC82-EB09-4A10-A521-16DF104CD708} = {5B9D41B0-F663-4B70-8DA1-73B71F5B439F}
+		{7096AF8F-51A8-45E3-AFB5-8C81B844A19E} = {5B9D41B0-F663-4B70-8DA1-73B71F5B439F}
+		{47EA4668-64CB-4B2D-9BC2-D9EB415C9442} = {5B9D41B0-F663-4B70-8DA1-73B71F5B439F}
+		{5F130489-DB73-4692-897E-404708539EB7} = {5B9D41B0-F663-4B70-8DA1-73B71F5B439F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .

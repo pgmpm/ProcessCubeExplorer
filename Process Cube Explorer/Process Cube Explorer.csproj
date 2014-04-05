@@ -390,11 +390,11 @@
       <Project>{4553a16a-4fc2-4236-b1f6-61480af8a88b}</Project>
       <Name>ConformanceChecking</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ConsolidationAlgorithm\Consolidation.csproj">
+    <ProjectReference Include="..\Consolidation\Consolidation.csproj">
       <Project>{9a35d603-ed13-4112-982b-312b864b360c}</Project>
       <Name>Consolidation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DBConnect\Database.csproj">
+    <ProjectReference Include="..\Database\Database.csproj">
       <Project>{db247007-f33b-4fb4-85f4-4272622b6cc4}</Project>
       <Name>Database</Name>
     </ProjectReference>
@@ -414,7 +414,7 @@
       <Project>{9A653A28-FE46-40E8-A14F-48B0E325165D}</Project>
       <Name>FirstFloor.ModernUI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProcessModel\Model.csproj">
+    <ProjectReference Include="..\Model\Model.csproj">
       <Project>{53b741be-1f95-425c-b6db-bdd6fbad5906}</Project>
       <Name>Model</Name>
     </ProjectReference>

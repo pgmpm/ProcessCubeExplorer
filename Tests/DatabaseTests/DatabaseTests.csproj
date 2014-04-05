@@ -129,19 +129,19 @@
     <Compile Include="Type\MicrosoftSQLTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DBConnect\Database.csproj">
+    <ProjectReference Include="..\..\Database\Database.csproj">
       <Project>{DB247007-F33B-4FB4-85F4-4272622B6CC4}</Project>
       <Name>Database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MainV2\MainV2.csproj">
+    <ProjectReference Include="..\..\Process Cube Explorer\Process Cube Explorer.csproj">
       <Project>{e91ac72f-8d98-427f-bc83-8c68c9946711}</Project>
-      <Name>MainV2</Name>
+      <Name>Process Cube Explorer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MatrixSelection\MatrixSelection.csproj">
+    <ProjectReference Include="..\..\MatrixSelection\MatrixSelection.csproj">
       <Project>{7fecfa3f-318e-4911-a51a-e57608756c55}</Project>
       <Name>MatrixSelection</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProcessModel\Model.csproj">
+    <ProjectReference Include="..\..\Model\Model.csproj">
       <Project>{53b741be-1f95-425c-b6db-bdd6fbad5906}</Project>
       <Name>Model</Name>
     </ProjectReference>

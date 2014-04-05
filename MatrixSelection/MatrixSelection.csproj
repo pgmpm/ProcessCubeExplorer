@@ -90,7 +90,7 @@
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProcessModel\Model.csproj">
+    <ProjectReference Include="..\Model\Model.csproj">
       <Project>{53b741be-1f95-425c-b6db-bdd6fbad5906}</Project>
       <Name>Model</Name>
     </ProjectReference>

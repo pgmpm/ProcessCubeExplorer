@@ -85,7 +85,7 @@
     <Compile Include="TokenReplayResultTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConformanceChecking\ConformanceChecking.csproj">
+    <ProjectReference Include="..\..\ConformanceChecking\ConformanceChecking.csproj">
       <Project>{4553a16a-4fc2-4236-b1f6-61480af8a88b}</Project>
       <Name>ConformanceChecking</Name>
     </ProjectReference>
@@ -93,11 +93,11 @@
       <Project>{7096af8f-51a8-45e3-afb5-8c81b844a19e}</Project>
       <Name>ExampleData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MatrixSelection\MatrixSelection.csproj">
+    <ProjectReference Include="..\..\MatrixSelection\MatrixSelection.csproj">
       <Project>{7fecfa3f-318e-4911-a51a-e57608756c55}</Project>
       <Name>MatrixSelection</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProcessModel\Model.csproj">
+    <ProjectReference Include="..\..\Model\Model.csproj">
       <Project>{53b741be-1f95-425c-b6db-bdd6fbad5906}</Project>
       <Name>Model</Name>
     </ProjectReference>

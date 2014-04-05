@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Diff\Diff.csproj">
+    <ProjectReference Include="..\..\Diff\Diff.csproj">
       <Project>{D90C2964-1FC2-4354-9051-C762D12D53E0}</Project>
       <Name>Diff</Name>
     </ProjectReference>
@@ -62,7 +62,7 @@
       <Project>{7096af8f-51a8-45e3-afb5-8c81b844a19e}</Project>
       <Name>ExampleData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProcessModel\Model.csproj">
+    <ProjectReference Include="..\..\Model\Model.csproj">
       <Project>{53b741be-1f95-425c-b6db-bdd6fbad5906}</Project>
       <Name>Model</Name>
     </ProjectReference>

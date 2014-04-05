@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{47EA4668-64CB-4B2D-9BC2-D9EB415C9442}</ProjectGuid>
+    <ProjectGuid>{CE60535F-C538-4149-B54C-0F24A6B5BF61}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsolidationTests</RootNamespace>
-    <AssemblyName>ConsolidationTests</AssemblyName>
+    <RootNamespace>pgmpm.MiningAlgorithmTests</RootNamespace>
+    <AssemblyName>MiningAlgorithmTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,6 +34,32 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
@@ -50,35 +76,37 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ConsolidatorFactoryTest.cs" />
-    <Compile Include="ConsolidatorSettingsTest.cs" />
+    <Compile Include="AlphaMinerTests.cs" />
+    <Compile Include="EventNodeTests.cs" />
+    <Compile Include="HeuristicMinerTests.cs" />
+    <Compile Include="MinerFactoryTests.cs" />
+    <Compile Include="MinerSettingsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StandardConsolidatorTest.cs" />
+    <Compile Include="ExceptionTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsolidationAlgorithm\Consolidation.csproj">
-      <Project>{9a35d603-ed13-4112-982b-312b864b360c}</Project>
-      <Name>Consolidation</Name>
+    <ProjectReference Include="..\ExampleData\ExampleData.csproj">
+      <Project>{7096af8f-51a8-45e3-afb5-8c81b844a19e}</Project>
+      <Name>ExampleData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MainV2\MainV2.csproj">
-      <Project>{e91ac72f-8d98-427f-bc83-8c68c9946711}</Project>
-      <Name>MainV2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MatrixSelection\MatrixSelection.csproj">
+    <ProjectReference Include="..\..\MatrixSelection\MatrixSelection.csproj">
       <Project>{7fecfa3f-318e-4911-a51a-e57608756c55}</Project>
       <Name>MatrixSelection</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProcessModel\Model.csproj">
+    <ProjectReference Include="..\..\MiningAlgorithm\MiningAlgorithm.csproj">
+      <Project>{e9548389-be77-4fee-af1d-c7adcbb7726a}</Project>
+      <Name>MiningAlgorithm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model\Model.csproj">
       <Project>{53b741be-1f95-425c-b6db-bdd6fbad5906}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="..\MainV2Tests\Files\MatrixSelection.mpm">
-      <Link>Files\MatrixSelection.mpm</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

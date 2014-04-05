@@ -157,7 +157,7 @@
       <Project>{7fecfa3f-318e-4911-a51a-e57608756c55}</Project>
       <Name>MatrixSelection</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProcessModel\Model.csproj">
+    <ProjectReference Include="..\Model\Model.csproj">
       <Project>{53b741be-1f95-425c-b6db-bdd6fbad5906}</Project>
       <Name>Model</Name>
     </ProjectReference>

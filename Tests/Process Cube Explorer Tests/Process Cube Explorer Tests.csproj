@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CE60535F-C538-4149-B54C-0F24A6B5BF61}</ProjectGuid>
+    <ProjectGuid>{13D45E21-458F-4CC9-93FE-C5D90CC1E3DC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>pgmpm.MiningAlgorithmTests</RootNamespace>
-    <AssemblyName>MiningAlgorithmTests</AssemblyName>
+    <RootNamespace>MainV2Tests</RootNamespace>
+    <AssemblyName>MainV2Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -61,7 +61,29 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.90.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Data.SQLite.x86.1.0.90.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\packages\System.Data.SQLite.x86.1.0.90.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -76,37 +98,64 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AlphaMinerTests.cs" />
-    <Compile Include="EventNodeTests.cs" />
-    <Compile Include="HeuristicMinerTests.cs" />
-    <Compile Include="MinerFactoryTests.cs" />
-    <Compile Include="MinerSettingsTests.cs" />
+    <Compile Include="FunctionsTests\DBConnectionHelpersTest.cs" />
+    <Compile Include="FunctionsTests\ErrorHandlingTest.cs" />
+    <Compile Include="FunctionsTests\ExporterTest.cs" />
+    <Compile Include="FunctionsTests\InterfaceHelpersTest.cs" />
+    <Compile Include="FunctionsTests\PrinterTest.cs" />
+    <Compile Include="FunctionsTests\SerializerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ExceptionTests.cs" />
+    <Compile Include="FunctionsTests\VisualizationHelpersTest.cs" />
+    <Compile Include="FunctionsTests\XMLHelperTest.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\ExampleData\ExampleData.csproj">
-      <Project>{7096af8f-51a8-45e3-afb5-8c81b844a19e}</Project>
-      <Name>ExampleData</Name>
+    <ProjectReference Include="..\..\ConformanceChecking\ConformanceChecking.csproj">
+      <Project>{4553A16A-4FC2-4236-B1F6-61480AF8A88B}</Project>
+      <Name>ConformanceChecking</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MatrixSelection\MatrixSelection.csproj">
-      <Project>{7fecfa3f-318e-4911-a51a-e57608756c55}</Project>
+    <ProjectReference Include="..\..\Consolidation\Consolidation.csproj">
+      <Project>{9A35D603-ED13-4112-982B-312B864B360C}</Project>
+      <Name>Consolidation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Database\Database.csproj">
+      <Project>{DB247007-F33B-4FB4-85F4-4272622B6CC4}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Diff\Diff.csproj">
+      <Project>{D90C2964-1FC2-4354-9051-C762D12D53E0}</Project>
+      <Name>Diff</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Process Cube Explorer\Process Cube Explorer.csproj">
+      <Project>{E91AC72F-8D98-427F-BC83-8C68C9946711}</Project>
+      <Name>Process Cube Explorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MatrixSelection\MatrixSelection.csproj">
+      <Project>{7FECFA3F-318E-4911-A51A-E57608756C55}</Project>
       <Name>MatrixSelection</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MiningAlgorithm\MiningAlgorithm.csproj">
-      <Project>{e9548389-be77-4fee-af1d-c7adcbb7726a}</Project>
+    <ProjectReference Include="..\..\MiningAlgorithm\MiningAlgorithm.csproj">
+      <Project>{E9548389-BE77-4FEE-AF1D-C7ADCBB7726A}</Project>
       <Name>MiningAlgorithm</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProcessModel\Model.csproj">
-      <Project>{53b741be-1f95-425c-b6db-bdd6fbad5906}</Project>
+    <ProjectReference Include="..\..\Model\Model.csproj">
+      <Project>{53B741BE-1F95-425C-B6DB-BDD6FBAD5906}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Visualization\Visualization.csproj">
+      <Project>{EAE3A693-3DA1-4C83-858B-A0CFE5C34A9D}</Project>
+      <Name>Visualization</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="..\DBConnectTests\Files\test.sqlite.db">
+      <Link>Files\test.sqlite.db</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="app.config" />
+    <Content Include="Files\MatrixSelection.mpm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
