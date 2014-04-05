@@ -19,7 +19,7 @@ from april 2013 to march 2014.
 You can find it at https://github.com/pgmpm/ProcessCubeExplorer
 
 Authors are:
-- Jannik Arndt
+- [Jannik Arndt](http://www.jannikarndt.de)
 - Thomas Meents
 - Bernd Nottbeck
 - Moritz Eversmann
@@ -68,15 +68,15 @@ Please note that you need to install the odac-drivers to use oracle-databases
 (http://www.oracle.com/technetwork/topics/dotnet/utilsoft-086879.html)
 
 ### Selecting data
-The example-data is (made up) clinical data, so you want to reduce it (either via 
+The [example-data](https://github.com/pgmpm/ProcessCubeExplorer/blob/master/Running%20Example.sql) is (made up) clinical data, so you want to reduce it (either via 
 dimension or filter) to one icd-10. Currently there are entries for T14.20 and T14.21.
 
 ### Mining
 You can choose one of the currently three mining-algorithms. These correspond (more or less)
-the the theoretical algorithms descriped in the documentation (in German) or here:
-- Alpha Miner ++  (http://wwwis.win.tue.nl/~wvdaalst/publications/p221.pdf)
-- Heuristic Miner (http://www.researchgate.net/profile/A_Weijters/publication/229124308_Process_Mining_with_the_Heuristics_Miner-algorithm/file/9fcfd510d615ef2b04.pdf)
-- Inductive Miner - infrequent (http://fluxicon.com/blog/wp-content/uploads/2013/09/Discovering-Block-Structured-Process-Models.pdf)
+the the theoretical algorithms descriped in the [documentation](https://github.com/pgmpm/ProcessCubeExplorer/blob/master/Documentation%20(German).pdf) (in German) or here:
+- [Alpha Miner ++](http://wwwis.win.tue.nl/~wvdaalst/publications/p221.pdf)
+- [Heuristic Miner](http://www.researchgate.net/profile/A_Weijters/publication/229124308_Process_Mining_with_the_Heuristics_Miner-algorithm/file/9fcfd510d615ef2b04.pdf)
+- [Inductive Miner - infrequent](http://fluxicon.com/blog/wp-content/uploads/2013/09/Discovering-Block-Structured-Process-Models.pdf)
 
 ### Interpreting the results
 After the mining-step you should see a matrix with the results. You can double-click on any 
@@ -85,7 +85,7 @@ or the token replay.
 
 # Contributing to the project
 The Process Cube Explorer was developed as a research-framework and is very easy to extend.
-Althoug the documentation is in German, the uml-class-diagrams on pages 33 through 42 will help you.
+Although the [documentation](https://github.com/pgmpm/ProcessCubeExplorer/blob/master/Documentation%20(German).pdf) is in German, the uml-class-diagrams on pages 33 through 42 will help you.
 
 ### Adding a mining-algorithm
 Adding a new mining-algorithm is easy: Make yourself familiar with the `field`-class and the `IMiner`-interface.
