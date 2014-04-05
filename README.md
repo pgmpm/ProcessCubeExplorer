@@ -53,9 +53,18 @@ ModernUI-Framework by FirstFloor, hosted at https://mui.codeplex.com under MS-PL
 
 # Usage
 
-You an either download the compiled version or the whole repository, load it in Visual Studio
-and compile it yourself. Notice that some unit-tests will fail if you don't enter credentials
-for a test-database (and we didn't want to publish ours). 
+#### Setup
+There is a ready-to-go [setup](https://github.com/pgmpm/ProcessCubeExplorer/tree/master/SETUP) that you can run to launch the application. 
+You will need the *whole* folder (about 5MB).
+
+#### Do it yourself
+You can also download the source code, load the *Process Cube Explorer.sln*-Solution into 
+Visual Studio and compile the code yourself. Notice that some unit-tests will fail if you 
+don't enter credentials for a test-database (and we didn't want to publish ours). 
+
+### Setting up a database
+The easiest way to try out the Process Cube Explorer is to set up a local MySQL-Server via [Xampp](https://www.apachefriends.org/download.html) and run the [RunningExample.sql](https://github.com/pgmpm/ProcessCubeExplorer/blob/master/Running%20Example.sql)-script
+on it. 
 
 ### Connecting to a database
 The software supports the following databases:
