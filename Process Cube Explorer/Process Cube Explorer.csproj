@@ -16,7 +16,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <PublishUrl>..\SETUP\</PublishUrl>
+    <PublishUrl>C:\ProcessCubeExplorer\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,8 +25,12 @@
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>3</ApplicationRevision>
+    <MapFileExtensions>false</MapFileExtensions>
+    <SupportUrl>https://github.com/pgmpm/ProcessCubeExplorer</SupportUrl>
+    <ProductName>Process Cube Explorer</ProductName>
+    <PublisherName>Projektgruppe MPM</PublisherName>
+    <SuiteName>Process Cube Explorer</SuiteName>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -442,6 +446,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".mpm">
+      <Visible>False</Visible>
+      <Description>Process Cube Explorer Dump</Description>
+      <Progid>pgmpm.processcubeexplorer</Progid>
+      <DefaultIcon>Cube32.ico</DefaultIcon>
+    </FileAssociation>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
