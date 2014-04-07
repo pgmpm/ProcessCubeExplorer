@@ -20,19 +20,7 @@ The Process Cube Explorer was created by the Projektgruppe MPM at University of 
 from april 2013 to march 2014. 
 You can find it at https://github.com/pgmpm/ProcessCubeExplorer
 
-Authors are:
-- [Jannik Arndt](http://www.jannikarndt.de)
-- Thomas Meents
-- Bernd Nottbeck
-- Moritz Eversmann
-- Andrej Albrecht
-- Bernhard Bruns
-- Krystian Zielonka
-- Christopher Licht
-- Naby Moussa Sow
-- Roman Bauer
-- Markus Holznagel
-
+Authors are: [Jannik Arndt](http://www.jannikarndt.de), Thomas Meents, Bernd Nottbeck, Moritz Eversmann, Andrej Albrecht, Bernhard Bruns, Krystian Zielonka, Christopher Licht, Naby Moussa Sow, Roman Bauer and Markus Holznagel
 (by percentage of authorship)
 
 Copyright 2014 Projektgruppe MPM. All Rights Reserved.
@@ -55,12 +43,13 @@ ModernUI-Framework by FirstFloor, hosted at https://mui.codeplex.com under MS-PL
 
 # Usage
 
+Have a look at our [wiki](https://github.com/pgmpm/ProcessCubeExplorer/wiki) for a step-by-step-tutorial!
+
 #### Setup
-There is a ready-to-go [setup](https://github.com/pgmpm/ProcessCubeExplorer/tree/master/SETUP) that you can run to launch the application. 
-You will need the *whole* folder (about 5MB).
+You can just download our [latest release](https://github.com/pgmpm/ProcessCubeExplorer/releases) and run the setup. The Process Cube Explorer will start automatically.
 
 #### Do it yourself
-You can also download the source code, load the *Process Cube Explorer.sln*-Solution into 
+You can also download the [source code](https://github.com/pgmpm/ProcessCubeExplorer/zipball/master), load the *Process Cube Explorer.sln*-Solution into 
 Visual Studio and compile the code yourself. Notice that some unit-tests will fail if you 
 don't enter credentials for a test-database (and we didn't want to publish ours). 
 
@@ -97,30 +86,4 @@ or the token replay.
 
 # Contributing to the project
 The Process Cube Explorer was developed as a research-framework and is very easy to extend.
-Although the [documentation](https://github.com/pgmpm/ProcessCubeExplorer/blob/master/Documentation%20(German).pdf) is in German, the uml-class-diagrams on pages 33 through 42 will help you.
-
-### Adding a mining-algorithm
-Adding a new mining-algorithm is easy: Make yourself familiar with the `field`-class and the `IMiner`-interface.
-Your algorithm will need to implement the interface, which means it will be initialized with a `field`-
-object. The field contains everything you need, most important the eventlog. Your `Mine()`-Method should
-return a `ProcessModel`-Object. Currently the only implementation is for petrinets, if your algorithm
-creates something different make sure to implement that kind of model as well.
-To use your algorithm you just have to create a `UserContent`-View and add it to the `ListOfMiners` in the
-`MinerFactory`.
-
-### Adding a processmodel-type
-Currently all three algorithms return petrinets, so only these are implemented. There is however an abstract class
-`ProcessModel` and we tried to use that whenever possible. This means you can just derive a new model-class
-from the `ProcessModel`-class and use it in your mining-algorithm. You still need to implement a visualization
-though, which should be derived from the abstract class `AbstractProcessModelVisualizer`.
-
-### Adding a diff-algorithm
-There also is an interface (`IDifference`) and a factory (`DiffFactory`) for diff-algorithms. Currently 
-the snapshot-diff is implemented.
-
-### Adding a consolidation-algorithm
-Use the `IConsolidator`-Interface and the `ConsolidatorFactory`.
-
-### Adding a database-type
-Most database-types are already supported, you can however derive your own from the abstract `MPMdbConnection`-class.
-Keep in mind that you might need to derive another class from the `SQLCreator`, since dialects may differ.
+Have a look at our [wiki-page](https://github.com/pgmpm/ProcessCubeExplorer/wiki/Contributing) to get an overview of the architecture!
