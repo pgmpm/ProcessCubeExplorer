@@ -14,6 +14,8 @@ The results are petrinets that can be automatically compared, printed, exported,
 You also have the chance to run two *conformance checking*-algorithms on them, the
 *Comparing Footprints*-Algorithm and a *Token Replay*.
 
+![](https://raw.githubusercontent.com/pgmpm/ProcessCubeExplorer/master/Images/7resultAndModel.png)
+
 The Process Cube Explorer was created by the Projektgruppe MPM at University of Oldenburg 
 from april 2013 to march 2014. 
 You can find it at https://github.com/pgmpm/ProcessCubeExplorer
